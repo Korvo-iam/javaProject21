@@ -24,7 +24,7 @@ player:
 ## Links / Ссылки
 Github actions : https://github.com/Korvo-iam/javaProject21/actions
 
-## Test status / Статус тестов
+## Autotest status / Статус автотестов
 [![Tests](https://github.com/Korvo-iam/javaProject21/actions/workflows/tests.yml/badge.svg)](https://github.com/Korvo-iam/javaProject21/actions/workflows/tests.yml)
 
 
