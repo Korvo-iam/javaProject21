@@ -36,15 +36,15 @@ public class Main {
         playerHand.addCard(cards.remove(random.nextInt(cards.size())));
         dealerHand.addCard(cards.remove(random.nextInt(cards.size())));
         playerHand.addCard(cards.remove(random.nextInt(cards.size())));
-        playerHand.showCards("player");
-        dealerHand.showCards("dealer");
+        playerHand.showCards("player", false);
+        dealerHand.showCards("dealer", false);
         continueGame();
     }
 
 
     public static boolean ifPlayerWon(){
         if (dealerHand.countScores()>playerHand.countScores() || playerHand.countScores()>21){
-            System.out.printf("Карты игрока %s : %s  \n", dealerHand.name, dealerHand.cardHand);
+            //System.out.printf("Карты игрока %s : %s  \n", dealerHand.name, dealerHand.cardHand);
             return false;
         }
         else{
@@ -62,40 +62,36 @@ public class Main {
             String respond = scanner.nextLine();
             if(respond.equals("y")){
                 playerHand.addCard(cards.remove(random.nextInt(cards.size())));
-                playerHand.showCards("player");
-                dealerHand.showCards("dealer");
+                playerHand.showCards("player", gameOver);
+                dealerHand.showCards("dealer", gameOver);
             }
             if (playerHand.countScores() > 21 || respond.equals("n")){
                 gameOver = true;
             }
         }
+        showGame();
         if(ifPlayerWon()){
-            System.out.println("U won");
+            System.out.println("You won!");
         }
         else{
-            
-            System.out.println("U didnt won");
+            System.out.println("Good luck next time!");
         }
-        playerHand.showCards("player");
-        dealerHand.showCards("player");
+        //playerHand.showCards("player");
+        //dealerHand.showCards("player");
         System.out.println("game over");
     }
     
     
     public static void showGame() {
         clearScreen();
-
         System.out.println("╔══════════════════════════════════╗");
         System.out.println("║            BLACKJACK             ║");
         System.out.println("╠══════════════════════════════════╣");
 
-        dealerHand.showCards("dealer");
-
+        dealerHand.showCards("dealer", gameOver);
         System.out.println();
-
-        playerHand.showCards("player");
+        playerHand.showCards("player", gameOver);
         playerHand.showScores();
-
         System.out.println("╚══════════════════════════════════╝");
     }
     

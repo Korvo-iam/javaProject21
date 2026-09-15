@@ -4,22 +4,24 @@ import java.util.ArrayList;
 class Player {
     String name;
     ArrayList<String> cardHand;
+    boolean isThereAce;
 
     
     public Player(String name) {
         this.name = name;
         this.cardHand = new ArrayList<>();
+        this.isThereAce = false;
     }
 
 
-    public void showCards(String player) {
+    public void showCards(String player, boolean gameOver) {
         System.out.println(this.name + ":");
 
         for (int row = 0; row < 5; row++) {
 
             for (int i = 0; i < cardHand.size(); i++) {
 
-                boolean hidden = player.equals("dealer") && i == 1;
+                boolean hidden = player.equals("dealer") && i == 1 && !gameOver;
 
                 String card = hidden ? "?" : cardHand.get(i);
 
@@ -54,6 +56,9 @@ class Player {
 
     public void addCard(String cardName){
         this.cardHand.add(cardName);
+        if (cardName.startsWith("A")){
+            this.isThereAce = true;
+        }
     }
 
 
@@ -71,7 +76,11 @@ class Player {
                 score += Integer.parseInt(card);
             }
         }
-
+        
+        if (isThereAce && score > 21) {
+            score -= 10;
+        }
+        
         return score;
     }
 
@@ -80,3 +89,4 @@ class Player {
         System.out.printf("Счёт игрока : %s \n", countScores());
     }
 }
+
