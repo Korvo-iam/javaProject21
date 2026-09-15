@@ -25,7 +25,8 @@ player:
 Github actions : https://github.com/Korvo-iam/javaProject21/actions
 
 ## Test status / Статус тестов
-[![Tests](https://github.com/Korvo-iam/python-project-50/actions/workflows/tests.yml/badge.svg)](https://github.com/Korvo-iam/python-project-50/actions/workflows/tests.yml)
+[![Tests](https://github.com/Korvo-iam/javaProject21/actions/workflows/tests.yml/badge.svg)](https://github.com/Korvo-iam/javaProject21/actions/workflows/tests.yml)
+
 
 ## Project description / Описание проекта
 🇷🇺blackJack это воспроизведение игры Blackjack в терминале. Дилер раздает себе и игроку по 2 карты, скрывая одну из своих до конца игры. А игрок должен решать - будет ли он брать больше карт, пытаясь набрать больше очков, чем дилер, но не привышая 21 очков.
@@ -36,6 +37,7 @@ blackJack is my first Java project, dedicated to getting better experience with 
 
 ## Usage / Использование
 🇷🇺После установки проекта, запуск программы выполняется с помощью одной из следующих комманд :
+
 🇬🇧After the project has been installed, it will start with one of following commands :
 ```bash make run```
 ```bash javac Main.java && java Main```
